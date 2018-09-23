@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>商城首页</title>
+    <!--<link href="css/normalize.css" rel="stylesheet">-->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <script src="js/jquery-1.12.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #mainWrapper {
+            max-width: 640px;
+            min-width: 320px;
+            margin: 0 auto;
+            height: 700px;
+            position: relative;
+            z-index: 28;
+
+        }
+
+        .headerWrapper {
+            display: table;
+            background-color: rgba(250, 0, 0, .6);
+            position: fixed;
+            top: 0;
+            max-width: 640px;
+            min-width: 320px;
+            height: 50px;
+            margin: 0 auto;
+
+        }
+
+        .cel {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        #logo {
+
+        }
+
+        /*京东图标*/
+        .jd-search-icon-logo {
+            display: inline-block;
+            overflow: hidden;
+            margin-top: 7px;
+        }
+
+        .jd-search-icon-logo i {
+            margin: 5px;
+            display: inline-block;
+            width: 56px;
+            height: 21px;
+            background-position: 0 -109px;
+        }
+
+        .jd-sprite-icon {
+
+            display: block;
+            background: url(img/jd-sprites.png?v=13) no-repeat;
+            background-size: 200px 200px;
+        }
+
+        #search {
+            width: 100%;
+
+        }
+
+        .searchWraper {
+            border-radius: 15px;
+            background-color: #ffffff;
+            height: 28px;
+            line-height: 28px;
+        }
+        .searchWraper input{
+            outline: 0;
+            resize: none;
+            border: 0;
+            padding-left: 5px;
+        }
+
+        #login {
+        }
+
+        #login span {
+            display: inline-block;
+            width: 50px
+        }
+        #searchBtn a{
+            text-decoration: none;
+            color: rgba(255,255,255,.8);
+        }
+        #searchBtn a:hover{
+            text-decoration: none;
+            color:rgba(255,255,255,.8);
+        }
+
+
+        /*导航样式*/
+
+        .quick-entry-link {
+            width: 25%;
+            float: left;
+            font-size: 12px;
+            text-decoration: none;
+            color: #666;
+            text-align: center;
+            display: block;
+            padding-bottom: 11px;
+            background-color: #ffffff;
+        }
+        .quick-entry-link img {
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 6px auto;
+        }
+        a, div, header, span {
+            -webkit-tap-highlight-color: rgba(255,255,255,0);
+        }
+        .quick-entry-nav{
+            padding-top: 11px;
+            background-color: #ffffff;
+            height: 156px;
+        }
+
+        /*商品列表*/
+        .itemList ul{
+            list-style: none;
+
+        }
+        .itemList ul li{
+            list-style: none;
+            float: left;
+            width: 50%;
+        }
+        .itemDetail{
+            height: 36px;
+            border-bottom: solid 1px #d7d7d7;
+            margin: 0 5px;
+            font-size: 12px;
+            text-align: left;
+            line-height: 36px;
+            color: #333;
+
+        }
+        .priceWrapper{
+            margin-top: 5px;
+        }
+        .price{
+            font-size: 14px;
+            color: #f15353;
+            vertical-align: middle;
+            float: left;
+        }
+        .love-item-icon {
+            border: 1px solid #999;
+            border-radius: 3px;
+            font-size: 12px;
+            color: #999;
+            float: right;
+        }
+
+        .jd-footer-copyright {
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+            color: #848689;
+            font-size: 12px;
+            background: #f8f8f8;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div id="mainWrapper">
+    <!--页眉：fixed-->
+    <!--搜索框-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div style="width: 640px; margin: 0 auto">
+            <div class="headerWrapper">
+                <div id="logo" class="cel"><span class="jd-search-icon-logo"><i class="jd-sprite-icon"></i></span></div>
+                <div id="search" class="cel">
+                    <div class="searchWraper">
+                        <input placeholder="华为P9预约赢手机">
+                    </div>
+                </div>
+                <div id="login" class="cel"><span id="searchBtn"><a href="list.html">查询</a></span></div>
+            </div>
+        </div>
+
+    </nav>
+
+
+    <!-- 首页轮播 我们直接使用Bootstrap框架-->
+    <div id="myCarousel" class="carousel slide">
+        <!-- 轮播（Carousel）指标 -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1" ></li>
+            <li data-target="#myCarousel" data-slide-to="2" ></li>
+        </ol>
+        <!-- 轮播（Carousel）项目 -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="img/jd_003.jpg" alt="First slide">
+            </div>
+            <div class="item">
+                <img src="img/jd_002.jpg" alt="Second slide">
+            </div>
+            <div class="item">
+                <img src="img/jd_001.jpg" alt="Third slide">
+            </div>
+        </div>
+    </div>
+
+
+    <!--导航链接-->
+    <nav class="quick-entry-nav">
+        <a class="quick-entry-link"  href="#"><img width="45" height="45" src="img/icon_flcx.png"><span>分类查询</span></a>
+        <a class="quick-entry-link"  href="#"><img width="45" height="45" src="img/icon_wlcx.png"><span>物流查询</span></a>
+        <a class="quick-entry-link"  href="#"><img width="45" height="45" src="img/icon_gwc.png"><span>购物车</span></a>
+        <a class="quick-entry-link"  href="#"><img width="45" height="45" src="img/icon_wdjd.png"><span>我的京东</span></a>
+        <a class="quick-entry-link"  href="#"><img width="45" height="45" src="img/icon_qhf.png"><span>抢2元话费</span></a>
+        <a class="quick-entry-link"  href=#"><img width="45" height="45" src="img/icon_lqzx.png"><span>领券中心</span></a>
+        <a class="quick-entry-link"  href="#"><img width="45" height="45" src="img/icon_jdcs.png"><span>京东超市</span></a>
+        <a class="quick-entry-link" href="#"><img width="45" height="45" src="img/icon_wdgz.png"><span>我的关注</span></a>
+    </nav>
+
+
+    <!--商品列表-->
+    <div class="itemList">
+        <ul>
+            <li>
+                <div>
+                    <img style="width:100%;" src="img/jd_item_01.jpg">
+                </div>
+
+                <div class="itemDetail">鞋子</div>
+                <div class="priceWrapper"><span class="price">￥137.00</span><span class="love-item-icon">看相似</span></div>
+
+            </li>
+            <li>
+                <div>
+                    <img style="width:100%;" src="img/jd_item_02.jpg">
+                </div>
+                <div class="itemDetail">鞋子</div>
+                <div class="priceWrapper"><span class="price">￥137.00</span><span class="love-item-icon">看相似</span></div>
+
+            </li>
+            <li>
+                <div>
+                    <img style="width:100%;" src="img/jd_item_03.jpg">
+                </div>
+                <div class="itemDetail">鞋子</div>
+                <div class="priceWrapper"><span class="price">￥137.00</span><span class="love-item-icon">看相似</span></div>
+
+            </li>
+            <li >
+                <div>
+                    <img style="width:100%;" src="img/jd_item_04.jpg">
+                </div>
+                <div class="itemDetail">鞋子</div>
+                <div class="priceWrapper"><span class="price">￥137.00</span><span class="love-item-icon">看相似</span></div>
+
+            </li>
+        </ul>
+    </div>
+
+    <!--页脚-->
+    <footer>
+        <div class="jd-footer-copyright">Copyright © 2004-2016 京东JD.com 版权所有</div>
+    </footer>
+
+</div>
+<script type="text/javascript">
+    var images = $(".itemList ul li img");
+    console.log(images);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+1.直接在libs中添加jar包
+
+classes.jar
+
+2.用Glide请求图片的代码
+
+ Glide.with(mContext).load(mediaItem.getGif().getImages().get(0)).diskCacheStrategy(DiskCacheStrategy.SOURCE).into(viewHolder.iv_image_gif);

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>商品页面</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            font-family: PingFangSC-Regular,Helvetica,"Droid Sans",Arial,sans-serif;
+        }
+        header{
+            overflow: hidden;
+            background: #efefef;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        input[type="search"]{
+            /*background: chartreuse;*/
+            width: 100%;
+            border: 0;
+        }
+        .header-logo{
+            height: 44px;
+            /*background-color: #2aabd2;*/
+            /*垂直居中一个图片*/
+            display:table-cell;
+            text-align:center;
+            vertical-align:middle;
+            /*为了美观，预留左右空隙*/
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .header-tab{
+            /*垂直居中一个图片*/
+            display:table-cell;
+            text-align:center;
+            vertical-align:middle;
+            width: 33%;
+        }
+        .header-tab:hover{
+            /*垂直居中一个图片*/
+            display:table-cell;
+            text-align:center;
+            vertical-align:middle;
+            width: 33%;
+            border-bottom: 3px solid #000000;
+        }
+        .header-list-icon{
+            height: 44px;
+            /*background-color: #2aabd2;*/
+            /*垂直居中一个图片*/
+            display:table-cell;
+            text-align:center;
+            vertical-align:middle;
+            /*为了美观，预留左右空隙*/
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .itemWrapper{
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #efefef;
+        }
+        .item-img{
+            height: 320px;
+            width: 320px;
+            margin: 0 auto;
+        }
+        .item-img img{
+            height: 100%;
+            width: 100%;
+        }
+        .item-title{
+            text-align: left;
+            font-size: 16px;
+            color: #252525;
+            margin: 10px;
+        }
+        .item-detail{
+            text-align: left;
+            font-size: 13px;
+            color: #848689;
+            margin: 10px;
+        }
+        .price{
+            margin-top: 20px;
+            margin-left: 10px;
+            color: #f15353;
+            font-weight: bold;
+            /*background-color: #2aabd2;*/
+            position: relative;
+        }
+        .cutNotify{
+            border: 1px solid #bfbfbf;
+            color: #686868;
+            font-size: 13px;
+            border-radius: 2px;
+            padding: 3px;
+            position: absolute;
+            right: 20px;
+        }
+
+        .fixedMenu{
+            width: 100%;
+            max-height: 45px;
+            min-height: 35px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            line-height: 50px;
+            display: table;
+            /*background-color: #2aabd2;*/
+        }
+        .like{
+            /*垂直居中一个图片*/
+            display:table-cell;
+            text-align:center;
+            width: 20%;
+            background-color: rgba(0,0,0,.8);
+            color: #ffffff;
+            font-family:"Microsoft YaHei";
+            font-size: 14px ;
+        }
+        .trolley{
+            display: table-cell;
+            width: 20%;
+            text-align: center;
+            background-color: rgba(0,0,0,.8);
+            color: #ffffff;
+            font-family:"Microsoft YaHei";
+            font-size: 14px ;
+        }
+        .add{
+            display: table-cell;
+            width: 30%;
+            text-align: center;
+            background-color: #ffb03f;
+            color: #ffffff;
+            font-family:"Microsoft YaHei";
+            font-size: 14px ;
+
+        }
+        .buy{
+            display: table-cell;
+            width: 30%;
+            text-align: center;
+            background-color: #f15353;
+            color: #ffffff;
+            font-family:"Microsoft YaHei";
+            font-size: 14px ;
+
+        }
+
+    </style>
+</head>
+<body>
+<!--表头-->
+<header>
+    <div class="header-logo"><a href="list.html"><img src="img/icon_back.png"></a></div>
+    <div class="header-tab">商品</div>
+    <div class="header-tab">详情</div>
+    <div class="header-tab">评价</div>
+    <div class="header-list-icon"><img src="img/icon_list.png"></div>
+</header>
+<!--商品展示-->
+<div class="itemWrapper">
+    <div class="item-img">
+        <img src="img/item001big.jpg">
+    </div>
+</div>
+<div class="item-title">沙沫 冷冻野生虎虾 15只 约500g 海鲜水产</div>
+<div class="item-detail" >春网捕捞斑节虾 新鲜大虾 500克装 烧烤油焖开背大虾</div>
+<div class="price">￥59.00 <span class="cutNotify">降价通知</span></div>
+<!--购买菜单-->
+<div class="fixedMenu">
+    <!--<div class="like">关注</div>-->
+    <!--<div class="trolley">购物</div>-->
+    <div class="add" onclick="addToCart()" ontouchstart="addToCart()"  >加入购物车</div>
+    <div class="buy" onclick="buyItNow()" ontouchstart="buyItNow()" >立即购买</div>
+</div>
+
+</body>
+    <script type="text/javascript">
+        function addToCart(){
+            //alert('addToCart');
+            //javascript:android.playVideo(itemid, videourl, itemtitle);
+            var shopid = 111;
+            var shopImager = './img/item001big.jpg';
+            var shoreName = '尚硅谷海鲜商店';
+            var shopName = '斑节虾';
+            var shopDes = '春网捕捞斑节虾 新鲜大虾 500克装 烧烤油焖开背大虾';
+            var shopPrice = 200;
+            var shopNumber = 1;  //默认购买数量
+
+            javascript:android.addShoppingcart(shopid , shopImager , shoreName ,shopName ,shopDes ,shopPrice ,shopNumber );
+        }
+        function buyItNow(){
+            //alert('buyItNow');
+            //javascript:android.playVideo(itemid, videourl, itemtitle);
+            var shopid = 111;
+            var shopImager = './img/item001big.jpg';
+            var shoreName = '尚硅谷海鲜商店';
+            var shopName = '斑节虾';
+            var shopDes = '春网捕捞斑节虾 新鲜大虾 500克装 烧烤油焖开背大虾';
+            var shopPrice = 200;
+            var shopNumber = 1;  //默认购买数量
+
+            javascript:android.shopping(shopid , shopImager , shoreName ,shopName ,shopDes ,shopPrice ,shopNumber );
+        }
+    </script>
+
+</html>

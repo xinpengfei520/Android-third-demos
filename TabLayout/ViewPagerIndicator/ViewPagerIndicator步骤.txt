@@ -1,0 +1,26 @@
+1.集成库
+
+2.布局
+	<com.viewpagerindicator.TabPageIndicator>
+        android:id="@+id/tabPageIndicator">
+        android:layout_width="match_parent">
+        android:layout_height="wrap_content">
+        android:layout_gravity="center_vertical"
+       />
+
+3.viewpager与TabPageIndicator的关联 
+     
+viewpager_newsdetail.setViewPager(viewpager_newsdetail);
+
+4.在清单列表中配置
+
+ android:theme="@style/Theme.PageIndicatorDefaults
+
+5.在库中修改其样式
+
+注:想要显示头部标题,需在viewpager中重写此方法
+例:
+   @Override
+        public CharSequence getPageTitle(int position) {
+            return data.get(position).getTitle();//获取children数组的标题
+        }

@@ -1,0 +1,3 @@
+ String json = "[{\"name\":\"阿福\", \"phone\":\"18600012345\"}]";
+        // 调用JS中的方法
+   webView.loadUrl("javascript:show('" + json + "')");

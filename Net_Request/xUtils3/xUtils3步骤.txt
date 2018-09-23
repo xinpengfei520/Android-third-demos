@@ -1,0 +1,38 @@
+1.集成库
+
+2.在Application中初始化
+
+  	x.Ext.setDebug(true);
+        x.Ext.init(this);
+
+3.联网请求
+
+	RequestParams params = new RequestParams(Constans.NEWSCENTER_PAGER_URL);
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                CacheUtil.putString(context, Constans.NEWSCENTER_PAGER_URL, result);
+                processedData(result);
+
+                LogUtil.e("联网请求成功==" + result);
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                LogUtil.e("联网请求失败==" + ex.getMessage());
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+                LogUtil.e("联网请求onCancelled==" + cex.getMessage());
+
+            }
+
+            @Override
+            public void onFinished() {
+                LogUtil.e("联网请求onFinished==");
+
+            }
+        });
+

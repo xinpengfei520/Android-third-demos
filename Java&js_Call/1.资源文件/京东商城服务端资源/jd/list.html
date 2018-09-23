@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>列表页面</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            font-family: PingFangSC-Regular,Helvetica,"Droid Sans",Arial,sans-serif;
+        }
+        header{
+            overflow: hidden;
+            background: #efefef;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        input[type="search"]{
+            /*background: chartreuse;*/
+            width: 100%;
+            border: 0;
+        }
+        .header-logo{
+            height: 44px;
+            /*background-color: #2aabd2;*/
+            /*垂直居中一个图片*/
+            display:table-cell;
+            text-align:center;
+            vertical-align:middle;
+            /*为了美观，预留左右空隙*/
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .header-search{
+            /*垂直居中一个图片*/
+            display:table-cell;
+            text-align:center;
+            vertical-align:middle;
+            width: 100%;
+        }
+        .header-search-wrapper{
+            width: 100%;
+            border-radius: 5px;
+            background-color: #ffffff;
+            padding: 3px 5px 3px 3px;
+
+        }
+        .header-list-icon{
+            height: 44px;
+            /*background-color: #2aabd2;*/
+            /*垂直居中一个图片*/
+            display:table-cell;
+            text-align:center;
+            vertical-align:middle;
+            /*为了美观，预留左右空隙*/
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .tabs{
+            padding: 0;
+            border-bottom: 1px solid #dedede;
+            height: 40px;
+        }
+        .tabs ul{
+            list-style: none;
+            display: table;
+            width: 100%;
+        }
+        .tabs ul li{
+            list-style-type: none;
+            display: table-cell;
+            text-align: center;
+            line-height: 40px;
+            font-size: 14px;
+            width: 25%;
+        }
+
+
+        .item-img{
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            /*background-color: #adadad;*/
+            padding: 7px 7px 5px 5px;
+
+        }
+        .item-img img{
+            width: 100px;
+            height: 100px;
+        }
+        .item-detail{
+            display: table-cell;
+            /*background-color: #2aabd2;*/
+            width: 100%;
+            border-bottom: 1px solid #efefef;
+        }
+
+        .item-title{
+            padding-top: 5px;
+            height: 68px;
+            color: #252525;
+        }
+        .item-price{
+            color: #f15353;
+        }
+        .item-ratings {
+            font-size: 12px;
+            color: #848689;
+            padding-right: 4px;
+            line-height: 16px;
+        }
+
+    </style>
+</head>
+<body>
+<!--头部，搜索区域-->
+<header>
+    <div class="header-logo"><a href="index.html"><img src="img/icon_back.png"></a></div>
+    <div class="header-search"><div class="header-search-wrapper"><input type="search" placeholder="411好奇超级品牌日"></div></div>
+    <div class="header-list-icon"><img src="img/icon_list.png"></div>
+</header>
+<!--分类检索区-->
+<div class="tabs">
+    <ul class="n"><li>综合</li><li>销量</li><li>价格</li><li>筛选</li></ul>
+</div>
+<!--商品列表-->
+<div class="list">
+    <ul>
+        <li>
+            <a href="item.html" target="_blank">
+                <div class="item-img"><img src="img/item001.jpg"></div>
+                <div class="item-detail">
+                    <div class="item-title">沙沫 冷冻野生虎虾 15只 约500g 海鲜水产</div>
+                    <div class="item-price">￥59.00</div>
+                    <div class="item-ratings">好评97%  2505条评价</div>
+                </div>
+            </a>
+        </li>
+
+    </ul>
+    <ul>
+        <li>
+            <a href="#">
+                <div class="item-img"><img src="img/item001.jpg"></div>
+                <div class="item-detail">
+                    <div class="item-title">沙沫 冷冻野生虎虾 15只 约500g 海鲜水产</div>
+                    <div class="item-price">￥59.00</div>
+                    <div class="item-ratings">好评97%  2505条评价</div>
+                </div>
+            </a>
+        </li>
+
+    </ul>
+    <ul>
+        <li>
+            <a href="#">
+                <div class="item-img"><img src="img/item001.jpg"></div>
+                <div class="item-detail">
+                    <div class="item-title">沙沫 冷冻野生虎虾 15只 约500g 海鲜水产</div>
+                    <div class="item-price">￥59.00</div>
+                    <div class="item-ratings">好评97%  2505条评价</div>
+                </div>
+            </a>
+        </li>
+
+    </ul>
+    <ul>
+        <li>
+            <a href="#">
+                <div class="item-img"><img src="img/item001.jpg"></div>
+                <div class="item-detail">
+                    <div class="item-title">沙沫 冷冻野生虎虾 15只 约500g 海鲜水产</div>
+                    <div class="item-price">￥59.00</div>
+                    <div class="item-ratings">好评97%  2505条评价</div>
+                </div>
+            </a>
+        </li>
+
+    </ul>
+    <ul>
+        <li>
+            <a href="#">
+                <div class="item-img"><img src="img/item001.jpg"></div>
+                <div class="item-detail">
+                    <div class="item-title">沙沫 冷冻野生虎虾 15只 约500g 海鲜水产</div>
+                    <div class="item-price">￥59.00</div>
+                    <div class="item-ratings">好评97%  2505条评价</div>
+                </div>
+            </a>
+        </li>
+
+    </ul>
+    <ul>
+        <li>
+            <a href="#">
+                <div class="item-img"><img src="img/item001.jpg"></div>
+                <div class="item-detail">
+                    <div class="item-title">沙沫 冷冻野生虎虾 15只 约500g 海鲜水产</div>
+                    <div class="item-price">￥59.00</div>
+                    <div class="item-ratings">好评97%  2505条评价</div>
+                </div>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+</body>
+</html>

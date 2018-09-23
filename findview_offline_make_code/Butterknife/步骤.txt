@@ -1,0 +1,53 @@
+1.集成库
+
+compile 'com.jakewharton:butterknife:7.0.1'
+
+
+2.在As设置Plugins下载Butterknife插件 
+
+
+3.alt+shift+s快捷键显示,点击即可自动初始化控件
+
+	①显示控件
+		
+    @Bind(R.id.tv_bottom_more)
+    TextView tvBottomMore;
+    @Bind(R.id.ll_bottom_more)
+    LinearLayout llBottomMore;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_mian2);
+        ButterKnife.bind(this);
+
+    }
+
+
+	②设置监听
+
+    @OnClick({R.id.ll_bottom_home, R.id.ll_bottom_invest, R.id.ll_bottom_me, R.id.ll_bottom_more})
+    public void changeTab(View view) {
+        switch (view.getId()) {
+            case R.id.ll_bottom_home:
+                selectFragment(0);
+                break;
+            case R.id.ll_bottom_invest:
+                selectFragment(1);
+                break;
+            case R.id.ll_bottom_me:
+                selectFragment(2);
+                break;
+            case R.id.ll_bottom_more:
+                selectFragment(3);
+                break;
+        }
+    }
+	
+	③解绑
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
+    }

@@ -1,0 +1,38 @@
+1.集成库
+
+2.需要添加侧滑的界面,继承SlidingFragmentActivity
+
+
+3.设置布局
+
+	①设置主界面的布局
+
+        setContentView(R.layout.activity_main);
+
+
+        ②设置左侧侧滑菜单的布局
+
+        setBehindContentView(R.layout.activity_leftmenu);
+
+
+        ③设置模式(在左边)
+
+        SlidingMenu slidingMenu = getSlidingMenu();
+
+        slidingMenu.setMode(SlidingMenu.LEFT);
+
+
+        ④设置滑动的模式(全屏滑动)
+
+        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+
+        ⑤设置侧滑菜单占据主页的宽度
+
+        //尺寸适配
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int widthPixels = displayMetrics.widthPixels;//宽
+        int heightPixels = displayMetrics.heightPixels;//高
+
+        //slidingMenu.setBehindOffset(DensityUtil.dip2px(MainActivity.this, (float) (widthPixels * 0.625)));//屏幕密度比*宽=像素
+        slidingMenu.setBehindOffset((int) (widthPixels * 0.625));//原理同上

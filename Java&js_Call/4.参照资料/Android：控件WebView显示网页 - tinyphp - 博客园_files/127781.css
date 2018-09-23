@@ -1,0 +1,9 @@
+.tinyTitle{background:url(http://images.cnblogs.com/cnblogs_com/tinyphp/523503/o_titlebg.jpg) repeat-y;
+font-family: "微软雅黑","宋体","黑体",Arial;height:28px;line-height:28px;margin:15px 0;padding:5px 0 5px 36px;color:#fff;font-size:16px;}
+table.list{ border-collapse:collapse; background:#fff; width:100%}
+table.list td{line-heitht:30px;text-align:left;}
+table.list th{border:1px solid #CCC;line-heitht:30px;text-align:center;}
+table.list th{background:#D3E9FF; }
+.tinydownload{display:inline-block;background:url("http://images.cnblogs.com/cnblogs_com/tinyphp/523503/o_down_ico.gif") no-repeat 0 4px;padding-left:25px;}
+.demoimg{box-shadow: 0 0 10px rgba(0,0,0,.4);}
+.cmdbg{background:#000;color:#fff;border-radius:5px;}

@@ -1,0 +1,53 @@
+1.自带的布局,直接new,代码如下
+
+GestureDetector detector;//手势识别器
+
+ 	detector = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener() {
+
+            @Override
+            //单击
+            public boolean onSingleTapConfirmed(MotionEvent e) {
+//                Toast.makeText(SystemPlayerActivity.this, "我被单击了", Toast.LENGTH_SHORT).show();
+                //隐藏,显示顶部和底部的进度条框
+                if (isShow) {//如果是显示视频
+                    //隐藏
+                    hide();
+                    //把消息移除
+                    handler.removeMessages(HIDE);
+
+                } else {//不是显示视频
+                    //显示
+                    show();
+                    //发消息
+                    handler.sendEmptyMessageDelayed(HIDE, 4000);
+                }
+                return super.onSingleTapConfirmed(e);
+            }
+
+            @Override
+            //双击
+            public boolean onDoubleTap(MotionEvent e) {
+                Toast.makeText(SystemPlayerActivity.this, "我被双击了", Toast.LENGTH_SHORT).show();
+                return super.onDoubleTap(e);
+            }
+
+            @Override
+            //长按
+            public void onLongPress(MotionEvent e) {
+                super.onLongPress(e);
+//                Toast.makeText(SystemPlayerActivity.this, "我被长按了", Toast.LENGTH_SHORT).show();
+                //播放,暂停
+                startAndPause();
+            }
+        });
+
+    }
+
+2.最重要的代码
+
+ @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        //把事件传递给手势识别器
+        detector.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }

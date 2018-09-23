@@ -1,0 +1,47 @@
+1.添加jar包
+
+2.添加两个封装类
+
+BitmapLruCache
+
+VolleyManager
+
+3.联网请求
+
+//        RequestQueue queue = Volley.newRequestQueue(context);//初始化封装的volley,这段可以不要了
+        StringRequest request = new StringRequest(Request.Method.GET, Constans.NEWSCENTER_PAGER_URL, new Response.Listener<String>() {
+            @Override
+            //成功
+            public void onResponse(String result) {
+                LogUtil.e("使用Volley联网请求成功==" + result);
+
+                CacheUtil.putString(context, Constans.NEWSCENTER_PAGER_URL, result);
+                processedData(result);
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            //失败
+            public void onErrorResponse(VolleyError volleyError) {
+                LogUtil.e("使用Volley联网请求成功==" + volleyError.getMessage());
+
+            }
+        }) {//解决乱码问题
+            @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+
+                try {
+                    String parsed = new String(response.data, "UTF-8");
+                    return Response.success(parsed, HttpHeaderParser.parseCacheHeaders(response));//返回
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                return super.parseNetworkResponse(response);
+            }
+        };
+
+        //添加到队列中
+//        queue.add(request);
+        VolleyManager.getRequestQueue().add(request);//Volley封装使用此方法
+
+

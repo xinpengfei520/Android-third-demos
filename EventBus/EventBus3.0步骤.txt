@@ -1,0 +1,28 @@
+1.集成库
+
+compile 'de.greenrobot:eventbus:3.0.0-beta1'
+
+2.注册EventBus
+
+        EventBus.getDefault().register(this);
+
+
+3.解绑EventBus
+
+        EventBus.getDefault().unregister(this);
+
+
+4.订阅函数
+
+ @Subscribe(threadMode = ThreadMode.MainThread)//在主线程执行,不用担心异常抛出
+
+
+5.定义函数的类型
+
+ public void showDataView(MediaItemBean itemBean)
+
+
+6.发布事件
+
+EventBus.getDefault().post(mediaItemBean);
+

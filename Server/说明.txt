@@ -1,0 +1,9 @@
+源码环境：
+jre7 tomcat7
+
+1、将.war文件复制到tomcat服务器webapps下，启动服务器即可
+
+2、访问工程路径http://localhost:8080/FileUpload/index.jsp即可测试上传
+
+http://192.168.21.52:8080/FileUpload/index.jsp
+
